@@ -46,6 +46,16 @@
         <div id="account-panel" hidden>
           <p class="signed-label">You are signed in as</p>
           <p class="signed-email" id="signed-email"></p>
+          <div class="project-form">
+            <h3>Create a hosting project</h3>
+            <label for="project-name">Project name</label>
+            <input id="project-name" maxlength="50" placeholder="My first website">
+            <label for="project-description">Description (optional)</label>
+            <input id="project-description" maxlength="180" placeholder="What is this website about?">
+            <button class="button button-primary" id="create-project-btn" type="button">Create project</button>
+          </div>
+          <h3 class="projects-heading">Your projects</h3>
+          <div id="project-list" class="project-list"><p class="empty-projects">Loading projects...</p></div>
           <button class="button button-secondary" id="logout-btn" type="button">Sign out</button>
         </div>
         <p class="auth-message" id="auth-message" role="status" aria-live="polite"></p>
