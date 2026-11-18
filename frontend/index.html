@@ -8,7 +8,7 @@
   <title>TamimHost.free</title>
   <link rel="stylesheet" href="./css/style.css">
   <script src="./js/app.js" defer></script>
-  <script type="module" src="./js/firebase.js"></script>
+  <script type="module" src="./js/auth.js"></script>
 </head>
 <body>
   <header class="topbar">
@@ -18,24 +18,41 @@
     </a>
     <span class="status"><span class="status-dot"></span> In development</span>
   </header>
-
   <main>
     <section class="hero">
       <div class="eyebrow">SIMPLE • MOBILE-FIRST • WEB HOSTING</div>
       <h1>Your website.<br><span>Ready for the web.</span></h1>
       <p class="hero-copy">A simple place to prepare, manage and publish your website. TamimHost.free is currently being built.</p>
       <div class="hero-actions">
-        <a class="button button-primary" href="#features">Explore features</a>
+        <a class="button button-primary" href="#account">Get started</a>
         <a class="button button-secondary" href="https://github.com/veyeqicezo625-svg/TamimHost.free" target="_blank" rel="noopener noreferrer">View source</a>
       </div>
-      <div class="notice"><strong>Early development</strong><span>Login, uploads and live website deployment are not available yet.</span></div>
+      <div class="notice"><strong>Early development</strong><span>Account access is being prepared. File uploads and live website deployment are not available yet.</span></div>
     </section>
-
-    <section class="features" id="features">
-      <div class="section-heading">
-        <span class="eyebrow">THE ROADMAP</span>
-        <h2>Built for simple publishing</h2>
+    <section class="account-section" id="account">
+      <div class="section-heading"><span class="eyebrow">YOUR ACCOUNT</span><h2>Sign in to TamimHost</h2></div>
+      <div class="auth-card">
+        <div id="auth-form">
+          <label for="auth-email">Email address</label>
+          <input id="auth-email" type="email" autocomplete="email" placeholder="you@example.com">
+          <label for="auth-password">Password</label>
+          <input id="auth-password" type="password" autocomplete="current-password" placeholder="At least 6 characters">
+          <div class="auth-actions">
+            <button class="button button-primary" id="signup-btn" type="button">Create account</button>
+            <button class="button button-secondary" id="login-btn" type="button">Sign in</button>
+          </div>
+          <button class="google-button" id="google-btn" type="button">Continue with Google</button>
+        </div>
+        <div id="account-panel" hidden>
+          <p class="signed-label">You are signed in as</p>
+          <p class="signed-email" id="signed-email"></p>
+          <button class="button button-secondary" id="logout-btn" type="button">Sign out</button>
+        </div>
+        <p class="auth-message" id="auth-message" role="status" aria-live="polite"></p>
       </div>
+    </section>
+    <section class="features" id="features">
+      <div class="section-heading"><span class="eyebrow">THE ROADMAP</span><h2>Built for simple publishing</h2></div>
       <div class="feature-grid">
         <article class="feature-card"><span class="feature-icon">01</span><h3>Project dashboard</h3><p>Manage your website projects from one place.</p></article>
         <article class="feature-card"><span class="feature-icon">02</span><h3>Code and upload</h3><p>Prepare HTML, CSS and JavaScript files or upload a project ZIP.</p></article>
@@ -43,7 +60,6 @@
       </div>
     </section>
   </main>
-
   <footer><span>© <span id="year"></span> TamimHost.free</span><span>Made for the web.</span></footer>
 </body>
 </html>
